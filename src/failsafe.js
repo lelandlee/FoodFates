@@ -32,8 +32,14 @@ $("#btn").click(function(){
 	object.drive_thru = $('input[name="drive_thru"]:checked').val()
 	object.waiter_service = $('input[name="waiter_service"]:checked').val()
 	object.host_large_group = $('input[name="host_large_group"]:checked').val()
+
+	object.categories = $('#categories').val()
+
+	console.log($('#categories').val())
 	console.log(object)
 })
+
+
 
 
 function get_ratings() {
@@ -43,4 +49,16 @@ function get_ratings() {
 
 function get_nearby() {
 	//list of nearby restuarants
+}
+
+function show_reviews() {
+	// Create an empty <tr> element and add it to the 1st position of the table:
+	var table = document.getElementById('reviewTable')
+	var row = table.insertRow();
+
+	// Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+	var cell1 = row.insertCell(0).innerHTML = "NEW CELL1";
+	var cell2 = row.insertCell(1).innerHTML = "NEW CELL2";
+	var cell3 = row.insertCell(2).innerHTML = "NEW CELL3";
+	var cell4 = row.insertCell(3).innerHTML = "NEW CELL4";
 }

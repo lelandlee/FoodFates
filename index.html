@@ -4,9 +4,10 @@
 		<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
 		<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-heat/v0.1.3/leaflet-heat.js'></script>
 
-		<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
-		<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
-		<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+		<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+		<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+		<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
@@ -16,7 +17,7 @@
     <div id='root'>
     </div>
     <script src="/static/bundle.js"></script>
-    <div>
+    <div style="width:30%">
     	<h3>Fair safe</h3>
     	Latitude: <input type= "number" name="latitude" value="33.5"><br>
     	Longitude: <input type= "number" name="longitude" value="-112.0716401"><br>
@@ -28,51 +29,382 @@
     	sat: <input type= "text" name="sat_open" size="15"value="8AM"><input type= "text" name="sat_close" size="15"value="10PM"><br>
     	sun: <input type= "text" name="sun_open" size="15"value="8AM"><input type= "text" name="sun_close" size="15"value="10PM"><br>
 
+    	<select multiple id="categories" size="30">
+					<option value="Bars"> Bars</option>
+					<option value="American (New)"> American (New)</option>
+					<option value="Nightlife"> Nightlife</option>
+					<option value="Lounges"> Lounges</option>
+					<option value="Restaurants"> Restaurants</option>
+					<option value="American (Traditional)"> American (Traditional)</option>
+					<option value="Burgers"> Burgers</option>
+					<option value="Breakfast & Brunch"> Breakfast & Brunch</option>
+					<option value="Food"> Food</option>
+					<option value="Grocery"> Grocery</option>
+					<option value="Cafes"> Cafes</option>
+					<option value="Chinese"> Chinese</option>
+					<option value="Italian"> Italian</option>
+					<option value="Fast Food"> Fast Food</option>
+					<option value="Coffee & Tea"> Coffee & Tea</option>
+					<option value="Pubs"> Pubs</option>
+					<option value="Arts & Entertainment"> Arts & Entertainment</option>
+					<option value="Arcades"> Arcades</option>
+					<option value="Breweries"> Breweries</option>
+					<option value="Videos & Video Game Rental"> Videos & Video Game Rental</option>
+					<option value="Books, Mags, Music & Video"> Books, Mags, Music & Video</option>
+					<option value="Shopping"> Shopping</option>
+					<option value="Food Delivery Services"> Food Delivery Services</option>
+					<option value="Pizza"> Pizza</option>
+					<option value="Gluten-Free"> Gluten-Free</option>
+					<option value="Asian Fusion"> Asian Fusion</option>
+					<option value="Soup"> Soup</option>
+					<option value="Sandwiches"> Sandwiches</option>
+					<option value="Salad"> Salad</option>
+					<option value="Seafood"> Seafood</option>
+					<option value="Bakeries"> Bakeries</option>
+					<option value="Desserts"> Desserts</option>
+					<option value="Sports Bars"> Sports Bars</option>
+					<option value="Ice Cream & Frozen Yogurt"> Ice Cream & Frozen Yogurt</option>
+					<option value="Beer, Wine & Spirits"> Beer, Wine & Spirits</option>
+					<option value="Tapas/Small Plates"> Tapas/Small Plates</option>
+					<option value="Drugstores"> Drugstores</option>
+					<option value="Barbeque"> Barbeque</option>
+					<option value="Specialty Schools"> Specialty Schools</option>
+					<option value="Education"> Education</option>
+					<option value="Cooking Schools"> Cooking Schools</option>
+					<option value="Specialty Food"> Specialty Food</option>
+					<option value="Wine Bars"> Wine Bars</option>
+					<option value="Mediterranean"> Mediterranean</option>
+					<option value="Health Markets"> Health Markets</option>
+					<option value="Vegetarian"> Vegetarian</option>
+					<option value="Portuguese"> Portuguese</option>
+					<option value="Diners"> Diners</option>
+					<option value="German"> German</option>
+					<option value="Delis"> Delis</option>
+					<option value="Dive Bars"> Dive Bars</option>
+					<option value="Bistros"> Bistros</option>
+					<option value="Chicken Wings"> Chicken Wings</option>
+					<option value="Meat Shops"> Meat Shops</option>
+					<option value="Polish"> Polish</option>
+					<option value="Greek"> Greek</option>
+					<option value="Sushi Bars"> Sushi Bars</option>
+					<option value="Japanese"> Japanese</option>
+					<option value="Indian"> Indian</option>
+					<option value="Event Planning & Services"> Event Planning & Services</option>
+					<option value="Caterers"> Caterers</option>
+					<option value="Hot Dogs"> Hot Dogs</option>
+					<option value="Mexican"> Mexican</option>
+					<option value="Tex-Mex"> Tex-Mex</option>
+					<option value="Bagels"> Bagels</option>
+					<option value="Donuts"> Donuts</option>
+					<option value="Comfort Food"> Comfort Food</option>
+					<option value="Cocktail Bars"> Cocktail Bars</option>
+					<option value="Ethnic Food"> Ethnic Food</option>
+					<option value="Steakhouses"> Steakhouses</option>
+					<option value="Korean"> Korean</option>
+					<option value="Chocolatiers & Shops"> Chocolatiers & Shops</option>
+					<option value="Cheese Shops"> Cheese Shops</option>
+					<option value="Irish"> Irish</option>
+					<option value="Vietnamese"> Vietnamese</option>
+					<option value="Thai"> Thai</option>
+					<option value="Middle Eastern"> Middle Eastern</option>
+					<option value="Tea Rooms"> Tea Rooms</option>
+					<option value="Bed & Breakfast"> Bed & Breakfast</option>
+					<option value="Hotels & Travel"> Hotels & Travel</option>
+					<option value="Convenience Stores"> Convenience Stores</option>
+					<option value="Peruvian"> Peruvian</option>
+					<option value="Latin American"> Latin American</option>
+					<option value="Hotels"> Hotels</option>
+					<option value="Taiwanese"> Taiwanese</option>
+					<option value="Tobacco Shops"> Tobacco Shops</option>
+					<option value="Do-It-Yourself Food"> Do-It-Yourself Food</option>
+					<option value="Buffets"> Buffets</option>
+					<option value="Southern"> Southern</option>
+					<option value="French"> French</option>
+					<option value="Cajun/Creole"> Cajun/Creole</option>
+					<option value="Soul Food"> Soul Food</option>
+					<option value="Juice Bars & Smoothies"> Juice Bars & Smoothies</option>
+					<option value="Caribbean"> Caribbean</option>
+					<option value="Fondue"> Fondue</option>
+					<option value="Pakistani"> Pakistani</option>
+					<option value="Malaysian"> Malaysian</option>
+					<option value="Party & Event Planning"> Party & Event Planning</option>
+					<option value="Jazz & Blues"> Jazz & Blues</option>
+					<option value="Persian/Iranian"> Persian/Iranian</option>
+					<option value="Hookah Bars"> Hookah Bars</option>
+					<option value="Beauty & Spas"> Beauty & Spas</option>
+					<option value="Cosmetics & Beauty Supply"> Cosmetics & Beauty Supply</option>
+					<option value="Music Venues"> Music Venues</option>
+					<option value="Automotive"> Automotive</option>
+					<option value="Gas & Service Stations"> Gas & Service Stations</option>
+					<option value="Active Life"> Active Life</option>
+					<option value="Bowling"> Bowling</option>
+					<option value="Department Stores"> Department Stores</option>
+					<option value="Fashion"> Fashion</option>
+					<option value="Art Galleries"> Art Galleries</option>
+					<option value="Lebanese"> Lebanese</option>
+					<option value="Internet Cafes"> Internet Cafes</option>
+					<option value="Flowers & Gifts"> Flowers & Gifts</option>
+					<option value="Florists"> Florists</option>
+					<option value="Venues & Event Spaces"> Venues & Event Spaces</option>
+					<option value="Candy Stores"> Candy Stores</option>
+					<option value="Pool Halls"> Pool Halls</option>
+					<option value="Spanish"> Spanish</option>
+					<option value="Party Supplies"> Party Supplies</option>
+					<option value="Wedding Planning"> Wedding Planning</option>
+					<option value="Dance Clubs"> Dance Clubs</option>
+					<option value="Fruits & Veggies"> Fruits & Veggies</option>
+					<option value="Beer Bar"> Beer Bar</option>
+					<option value="Cheesesteaks"> Cheesesteaks</option>
+					<option value="Fish & Chips"> Fish & Chips</option>
+					<option value="Salvadoran"> Salvadoran</option>
+					<option value="Shopping Centers"> Shopping Centers</option>
+					<option value="Outlet Stores"> Outlet Stores</option>
+					<option value="Wholesale Stores"> Wholesale Stores</option>
+					<option value="British"> British</option>
+					<option value="Cupcakes"> Cupcakes</option>
+					<option value="Home Decor"> Home Decor</option>
+					<option value="Home & Garden"> Home & Garden</option>
+					<option value="Furniture Stores"> Furniture Stores</option>
+					<option value="Golf"> Golf</option>
+					<option value="Vegan"> Vegan</option>
+					<option value="Hawaiian"> Hawaiian</option>
+					<option value="Gastropubs"> Gastropubs</option>
+					<option value="Russian"> Russian</option>
+					<option value="Pretzels"> Pretzels</option>
+					<option value="Karaoke"> Karaoke</option>
+					<option value="Farmers Market"> Farmers Market</option>
+					<option value="Shaved Ice"> Shaved Ice</option>
+					<option value="Kitchen & Bath"> Kitchen & Bath</option>
+					<option value="Professional Services"> Professional Services</option>
+					<option value="Arabian"> Arabian</option>
+					<option value="Seafood Markets"> Seafood Markets</option>
+					<option value="Performing Arts"> Performing Arts</option>
+					<option value="Resorts"> Resorts</option>
+					<option value="Halal"> Halal</option>
+					<option value="Dim Sum"> Dim Sum</option>
+					<option value="Churches"> Churches</option>
+					<option value="Festivals"> Festivals</option>
+					<option value="Religious Organizations"> Religious Organizations</option>
+					<option value="Sporting Goods"> Sporting Goods</option>
+					<option value="Sports Wear"> Sports Wear</option>
+					<option value="Cuban"> Cuban</option>
+					<option value="Nutritionists"> Nutritionists</option>
+					<option value="Health & Medical"> Health & Medical</option>
+					<option value="Mongolian"> Mongolian</option>
+					<option value="Casinos"> Casinos</option>
+					<option value="Cinema"> Cinema</option>
+					<option value="Car Wash"> Car Wash</option>
+					<option value="Social Clubs"> Social Clubs</option>
+					<option value="Filipino"> Filipino</option>
+					<option value="Kosher"> Kosher</option>
+					<option value="Gay Bars"> Gay Bars</option>
+					<option value="Butcher"> Butcher</option>
+					<option value="Discount Store"> Discount Store</option>
+					<option value="Argentine"> Argentine</option>
+					<option value="Street Vendors"> Street Vendors</option>
+					<option value="Food Trucks"> Food Trucks</option>
+					<option value="Belgian"> Belgian</option>
+					<option value="Cambodian"> Cambodian</option>
+					<option value="Hungarian"> Hungarian</option>
+					<option value="Szechuan"> Szechuan</option>
+					<option value="Wineries"> Wineries</option>
+					<option value="Delicatessen"> Delicatessen</option>
+					<option value="Pasta Shops"> Pasta Shops</option>
+					<option value="Adult Entertainment"> Adult Entertainment</option>
+					<option value="Arts & Crafts"> Arts & Crafts</option>
+					<option value="Himalayan/Nepalese"> Himalayan/Nepalese</option>
+					<option value="Cantonese"> Cantonese</option>
+					<option value="Indonesian"> Indonesian</option>
+					<option value="Afghan"> Afghan</option>
+					<option value="Herbs & Spices"> Herbs & Spices</option>
+					<option value="Mobile Phones"> Mobile Phones</option>
+					<option value="Electronics"> Electronics</option>
+					<option value="Ticket Sales"> Ticket Sales</option>
+					<option value="Food Stands"> Food Stands</option>
+					<option value="CSA"> CSA</option>
+					<option value="Modern European"> Modern European</option>
+					<option value="Moroccan"> Moroccan</option>
+					<option value="Appliances"> Appliances</option>
+					<option value="Gift Shops"> Gift Shops</option>
+					<option value="Basque"> Basque</option>
+					<option value="Photography Stores & Services"> Photography Stores & Services</option>
+					<option value="Amusement Parks"> Amusement Parks</option>
+					<option value="Ethiopian"> Ethiopian</option>
+					<option value="Tanning"> Tanning</option>
+					<option value="Irish Pub"> Irish Pub</option>
+					<option value="Home Services"> Home Services</option>
+					<option value="Utilities"> Utilities</option>
+					<option value="Auto Repair"> Auto Repair</option>
+					<option value="Brazilian"> Brazilian</option>
+					<option value="Smog Check Stations"> Smog Check Stations</option>
+					<option value="Personal Chefs"> Personal Chefs</option>
+					<option value="Laotian"> Laotian</option>
+					<option value="Creperies"> Creperies</option>
+					<option value="Gelato"> Gelato</option>
+					<option value="Coffeeshops"> Coffeeshops</option>
+					<option value="Tapas Bars"> Tapas Bars</option>
+					<option value="Massage"> Massage</option>
+					<option value="Colleges & Universities"> Colleges & Universities</option>
+					<option value="Hot Pot"> Hot Pot</option>
+					<option value="Burmese"> Burmese</option>
+					<option value="Live/Raw Food"> Live/Raw Food</option>
+					<option value="Bookstores"> Bookstores</option>
+					<option value="Adult Education"> Adult Education</option>
+					<option value="African"> African</option>
+					<option value="Brasseries"> Brasseries</option>
+					<option value="RV Parks"> RV Parks</option>
+					<option value="Bubble Tea"> Bubble Tea</option>
+					<option value="Brewing Supplies"> Brewing Supplies</option>
+					<option value="Airports"> Airports</option>
+					<option value="Turkish"> Turkish</option>
+					<option value="Oil Change Stations"> Oil Change Stations</option>
+					<option value="Tours"> Tours</option>
+					<option value="Coffee & Tea Supplies"> Coffee & Tea Supplies</option>
+					<option value="Colombian"> Colombian</option>
+					<option value="Cafeteria"> Cafeteria</option>
+					<option value="Scandinavian"> Scandinavian</option>
+					<option value="Canadian (New)"> Canadian (New)</option>
+					<option value="Poutineries"> Poutineries</option>
+					<option value="Bikes"> Bikes</option>
+					<option value="Travel Services"> Travel Services</option>
+					<option value="Organic Stores"> Organic Stores</option>
+					<option value="Local Flavor"> Local Flavor</option>
+					<option value="Traditional Chinese Medicine"> Traditional Chinese Medicine</option>
+					<option value="Womens Clothing"> Womens Clothing</option>
+					<option value="Haitian"> Haitian</option>
+					<option value="Austrian"> Austrian</option>
+					<option value="Tires"> Tires</option>
+					<option value="Food Court"> Food Court</option>
+					<option value="Dominican"> Dominican</option>
+					<option value="Horseback Riding"> Horseback Riding</option>
+					<option value="Scottish"> Scottish</option>
+					<option value="Champagne Bars"> Champagne Bars</option>
+					<option value="Swimming Pools"> Swimming Pools</option>
+					<option value="Patisserie/Cake Shop"> Patisserie/Cake Shop</option>
+					<option value="Cards & Stationery"> Cards & Stationery</option>
+					<option value="Newspapers & Magazines"> Newspapers & Magazines</option>
+					<option value="Pub Food"> Pub Food</option>
+					<option value="Parking"> Parking</option>
+					<option value="Local Services"> Local Services</option>
+					<option value="Bike Repair/Maintenance"> Bike Repair/Maintenance</option>
+					<option value="Ramen"> Ramen</option>
+					<option value="Landmarks & Historical Buildings"> Landmarks & Historical Buildings</option>
+					<option value="Public Services & Government"> Public Services & Government</option>
+					<option value="Yoga"> Yoga</option>
+					<option value="Fitness & Instruction"> Fitness & Instruction</option>
+					<option value="Musicians"> Musicians</option>
+					<option value="Couriers & Delivery Services"> Couriers & Delivery Services</option>
+					<option value="Personal Shopping"> Personal Shopping</option>
+					<option value="Thrift Stores"> Thrift Stores</option>
+					<option value="Windshield Installation & Repair"> Windshield Installation & Repair</option>
+					<option value="Bangladeshi"> Bangladeshi</option>
+					<option value="Australian"> Australian</option>
+					<option value="Piano Bars"> Piano Bars</option>
+					<option value="Used, Vintage & Consignment"> Used, Vintage & Consignment</option>
+					<option value="Ukrainian"> Ukrainian</option>
+					<option value="Falafel"> Falafel</option>
+					<option value="Hardware Stores"> Hardware Stores</option>
+					<option value="Beer Garden"> Beer Garden</option>
+					<option value="Baden"> Baden</option>
+					<option value="Beer Gardens"> Beer Gardens</option>
+					<option value="International"> International</option>
+					<option value="Beverage Store"> Beverage Store</option>
+					<option value="Sports Clubs"> Sports Clubs</option>
+					<option value="Hiking"> Hiking</option>
+					<option value="Ethnic Grocery"> Ethnic Grocery</option>
+					<option value="Kebab"> Kebab</option>
+					<option value="Children"> Children</option>
+					<option value="Hair Salons"> Hair Salons</option>
+					<option value="Post Offices"> Post Offices</option>
+					<option value="Serbo Croatian"> Serbo Croatian</option>
+					<option value="Financial Services"> Financial Services</option>
+					<option value="Banks & Credit Unions"> Banks & Credit Unions</option>
+					<option value="Singaporean"> Singaporean</option>
+					<option value="Weight Loss Centers"> Weight Loss Centers</option>
+					<option value="Oriental"> Oriental</option>
+					<option value="Comic Books"> Comic Books</option>
+					<option value="Vinyl Records"> Vinyl Records</option>
+					<option value="Distilleries"> Distilleries</option>
+					<option value="Dry Cleaning & Laundry"> Dry Cleaning & Laundry</option>
+					<option value="Community Service/Non-Profit"> Community Service/Non-Profit</option>
+					<option value="Venezuelan"> Venezuelan</option>
+					<option value="Leisure Centers"> Leisure Centers</option>
+					<option value="Bavarian"> Bavarian</option>
+					<option value="Kids Activities"> Kids Activities</option>
+					<option value="Toy Stores"> Toy Stores</option>
+					<option value="Iberian"> Iberian</option>
+					<option value="Trinidadian"> Trinidadian</option>
+					<option value="Curry Sausage"> Curry Sausage</option>
+					<option value="Shanghainese"> Shanghainese</option>
+					<option value="Jewelry"> Jewelry</option>
+					<option value="Pest Control"> Pest Control</option>
+					<option value="Cooking Classes"> Cooking Classes</option>
+					<option value="Country Dance Halls"> Country Dance Halls</option>
+					<option value="Pet Services"> Pet Services</option>
+					<option value="Pets"> Pets</option>
+					<option value="Cultural Center"> Cultural Center</option>
+					<option value="Donairs"> Donairs</option>
+					<option value="Czech"> Czech</option>
+					<option value="Real Estate"> Real Estate</option>
+					<option value="Apartments"> Apartments</option>
+					<option value="Eastern European"> Eastern European</option>
+					<option value="Eastern German"> Eastern German</option>
+					<option value="Printing Services"> Printing Services</option>
+					<option value="Wok"> Wok</option>
+					<option value="Lakes"> Lakes</option>
+					<option value="Swiss Food"> Swiss Food</option>
+					<option value="Egyptian"> Egyptian</option>
+					<option value="Uzbek"> Uzbek</option>
+					<option value="Trainers"> Trainers</option>
+					<option value="Wine Tours"> Wine Tours</option>
+					<option value="Shared Office Spaces"> Shared Office Spaces</option>
+					<option value="Pita"> Pita</option>
+					<option value="Teppanyaki"> Teppanyaki</option>
+					<option value="Day Spas"> Day Spas</option>
+					<option value="Izakaya">Izakaya</option>
+
+			</select>
+
     	<form>
     		<p>Wifi</p>
 				<input type="radio" name="wifi" value=true checked>Yes
 				<input type="radio" name="wifi" value=false>No
-			</form>
-			<form>
     		<p>Alcohol</p>
 				<input type="radio" name="alcohol" value=true checked>Yes
 				<input type="radio" name="alcohol" value=false>No
-			</form>
-			<form>
     		<p>price_range</p>
 				<input type="radio" name="price_range" value=0>sub 10
 				<input type="radio" name="price_range" value=1 checked>10-25
 				<input type="radio" name="price_range" value=2>25-40
 				<input type="radio" name="price_range" value=3>above 40
-			</form>
-			<form>
     		<p>late_night</p>
 				<input type="radio" name="late_night" value=true checked>Yes
 				<input type="radio" name="late_night" value=false>No
-			</form>
-			<form>
     		<p>accepts_credit_card</p>
 				<input type="radio" name="accepts_credit_card" value=true checked>Yes
 				<input type="radio" name="accepts_credit_card" value=false>No
-			</form>
-			<form>
     		<p>drive_thru</p>
 				<input type="radio" name="drive_thru" value=true checked>Yes
 				<input type="radio" name="drive_thru" value=false>No
-			</form>
-			<form>
     		<p>waiter_service</p>
 				<input type="radio" name="waiter_service" value=true checked>Yes
 				<input type="radio" name="waiter_service" value=false>No
-			</form>
-			<form>
     		<p>host_large_group</p>
 				<input type="radio" name="host_large_group" value=true checked>Yes
 				<input type="radio" name="host_large_group" value=false>No
 			</form>
 			<button id="btn"type="submit" form="form1" value="Submit">Submit</button>
-    	<!-- Need to o special thing for drop downs -->
-    	<script src="/src/failsafe.js"></script>
     </div>
+  	<table id="reviewTable" style="width:69%;float:right">
+		  <tr>
+		    <td>Positive</td>
+		    <td>Value</td> 
+		    <td>Negative</td>
+		    <td>Value</td>
+		  </tr>
+		</table>
+
+    <script src="/src/failsafe.js"></script>
   </body>
 </html>
+

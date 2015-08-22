@@ -93,7 +93,6 @@ var sidebar = React.createClass({
 
     return (
       <div style={sidebarStyle}>
-        <h1>Food Fates:</h1>
         <b> Latitude: </b> <input type="number" value={this.props.latitude} onChange={this.setLatitude}/>
         <b> Longitude: </b> <input type="number" value={this.props.longitude} onChange={this.setLongitude}/>
         <b>Classification: </b>

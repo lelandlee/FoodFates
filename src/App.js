@@ -11,11 +11,16 @@ export default class App extends Component {
   	var latitude = store.latitude
   	var longitude = store.longitude
 
+  	const headerStyle = {
+  		'text-align': 'center'
+  	}
+
     return (
     	<div>
-      	<SideBar
+    		<h1 style={headerStyle}>Fates of Food:</h1>
+      	{/*<SideBar
       		latitude={latitude}
-      		longitude={longitude}/>
+      		longitude={longitude}/>*/}
       	<MapboxMap
           mapId="mapbox.outdoors"
           zoomControl={false}

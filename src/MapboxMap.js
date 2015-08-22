@@ -91,7 +91,7 @@ var MapboxMap = React.createClass({
           iconCreateFunction: function(cluster) {
             console.log('cluster', cluster)
             return L.mapbox.marker.icon({
-              'marker-symbol': 'harbor',
+              'marker-symbol': cluster.getChildCount(),
               'marker-color': '#422'
             });
           }
@@ -121,8 +121,9 @@ var MapboxMap = React.createClass({
   render: function() {
     var mapStyle = {
       width: '74%',
-      height: '100%',
-      float: 'right'
+      height: '90%',
+      float: 'right',
+      border: '2px solid wheat'
     };
 
     return (
