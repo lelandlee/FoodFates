@@ -1,10 +1,78 @@
 <html>
   <head>
+		<script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+		<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-heat/v0.1.3/leaflet-heat.js'></script>
+
+		<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/leaflet.markercluster.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+		<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
     <title>Sample App</title>
   </head>
   <body>
     <div id='root'>
     </div>
     <script src="/static/bundle.js"></script>
+    <div>
+    	<h3>Fair safe</h3>
+    	Latitude: <input type= "number" name="latitude" value="33.5"><br>
+    	Longitude: <input type= "number" name="longitude" value="-112.0716401"><br>
+    	mon: <input type= "text" name="mon_open" size="15"value="8AM"><input type= "text" name="mon_close" size="15"value="10PM"><br>
+    	tue: <input type= "text" name="tue_open" size="15"value="8AM"><input type= "text" name="tue_close" size="15"value="10PM"><br>
+    	wen: <input type= "text" name="wen_open" size="15"value="8AM"><input type= "text" name="wen_close" size="15"value="10PM"><br>
+    	thur: <input type= "text" name="thur_open" size="15"value="8AM"><input type= "text" name="thur_close" size="15"value="10PM"><br>
+    	fri: <input type= "text" name="fri_open" size="15"value="8AM"><input type= "text" name="fri_close" size="15"value="10PM"><br>
+    	sat: <input type= "text" name="sat_open" size="15"value="8AM"><input type= "text" name="sat_close" size="15"value="10PM"><br>
+    	sun: <input type= "text" name="sun_open" size="15"value="8AM"><input type= "text" name="sun_close" size="15"value="10PM"><br>
+
+    	<form>
+    		<p>Wifi</p>
+				<input type="radio" name="wifi" value=true checked>Yes
+				<input type="radio" name="wifi" value=false>No
+			</form>
+			<form>
+    		<p>Alcohol</p>
+				<input type="radio" name="alcohol" value=true checked>Yes
+				<input type="radio" name="alcohol" value=false>No
+			</form>
+			<form>
+    		<p>price_range</p>
+				<input type="radio" name="price_range" value=0>sub 10
+				<input type="radio" name="price_range" value=1 checked>10-25
+				<input type="radio" name="price_range" value=2>25-40
+				<input type="radio" name="price_range" value=3>above 40
+			</form>
+			<form>
+    		<p>late_night</p>
+				<input type="radio" name="late_night" value=true checked>Yes
+				<input type="radio" name="late_night" value=false>No
+			</form>
+			<form>
+    		<p>accepts_credit_card</p>
+				<input type="radio" name="accepts_credit_card" value=true checked>Yes
+				<input type="radio" name="accepts_credit_card" value=false>No
+			</form>
+			<form>
+    		<p>drive_thru</p>
+				<input type="radio" name="drive_thru" value=true checked>Yes
+				<input type="radio" name="drive_thru" value=false>No
+			</form>
+			<form>
+    		<p>waiter_service</p>
+				<input type="radio" name="waiter_service" value=true checked>Yes
+				<input type="radio" name="waiter_service" value=false>No
+			</form>
+			<form>
+    		<p>host_large_group</p>
+				<input type="radio" name="host_large_group" value=true checked>Yes
+				<input type="radio" name="host_large_group" value=false>No
+			</form>
+			<button id="btn"type="submit" form="form1" value="Submit">Submit</button>
+    	<!-- Need to o special thing for drop downs -->
+    	<script src="/src/failsafe.js"></script>
+    </div>
   </body>
 </html>
