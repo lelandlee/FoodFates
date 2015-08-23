@@ -10,6 +10,9 @@
 
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <title>Sample App</title>
   </head>
@@ -17,7 +20,31 @@
     <div id='root'>
     </div>
     <script src="/static/bundle.js"></script>
-    <div style="width:30%">
+
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal">Information</button>
+    <div id="myModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        <h4 class="modal-title">Fates of Foods - by Oracle of Yelp</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Word cloud of a 5 star rating</p>
+		        <img src="./src/yelp_good_to_use_logo_review_5.png" alt="View" style="width:100%;height:30%;">
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		 </div>
+
+
+    <div id="map" style="width:75%;float:right;height:80%;border:2px solid wheat"></div>
+
+    <div style="width:31%">
     	<h3>Fair safe</h3>
     	Latitude: <input type= "number" name="latitude" value="33.5"><br>
     	Longitude: <input type= "number" name="longitude" value="-112.0716401"><br>
@@ -362,16 +389,22 @@
 					<option value="Teppanyaki"> Teppanyaki</option>
 					<option value="Day Spas"> Day Spas</option>
 					<option value="Izakaya">Izakaya</option>
-
 			</select>
 
     	<form>
     		<p>Wifi</p>
-				<input type="radio" name="wifi" value=true checked>Yes
-				<input type="radio" name="wifi" value=false>No
+				<input type="radio" name="wifi" value=0 checked>No
+				<input type="radio" name="wifi" value=1>Free
+				<input type="radio" name="wifi" value=2>Pai
     		<p>Alcohol</p>
-				<input type="radio" name="alcohol" value=true checked>Yes
-				<input type="radio" name="alcohol" value=false>No
+				<input type="radio" name="alcohol" value=0 checked>Full
+				<input type="radio" name="alcohol" value=1>Beer and Wine
+				<input type="radio" name="alcohol" value=2>None
+				<p>Noise Level</p>
+				<input type="radio" name="noise_level" value=0 checked>Quiet
+				<input type="radio" name="noise_level" value=1>Average
+				<input type="radio" name="noise_level" value=2>Load
+				<input type="radio" name="noise_level" value=3>Very Load
     		<p>price_range</p>
 				<input type="radio" name="price_range" value=0>sub 10
 				<input type="radio" name="price_range" value=1 checked>10-25
@@ -395,12 +428,12 @@
 			</form>
 			<button id="btn"type="submit" form="form1" value="Submit">Submit</button>
     </div>
-  	<table id="reviewTable" style="width:69%;float:right">
+  	<table id="reviewTable" style="width:100%;float:right">
 		  <tr>
-		    <td>Positive</td>
-		    <td>Value</td> 
-		    <td>Negative</td>
-		    <td>Value</td>
+		    <td><b>Positive Reviews</b></td>
+		    <td><b>Probabilties</b></td> 
+		    <td><b>Negative Reviews</b></td>
+		    <td><b>Probabilties</b></td>
 		  </tr>
 		</table>
 

@@ -21,13 +21,13 @@ export default class App extends Component {
       	{/*<SideBar
       		latitude={latitude}
       		longitude={longitude}/>*/}
-      	<MapboxMap
+      	{/*<MapboxMap
           mapId="mapbox.outdoors"
           zoomControl={false}
           center={[latitude, longitude]} 
           latitude={latitude}
       		longitude={longitude}
-          zoom={11}/>
+          zoom={11}/>*/}
       </div>
     );
   }

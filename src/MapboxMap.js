@@ -52,6 +52,26 @@ var MapboxMap = React.createClass({
       var heat = L.heatLayer(coordinates, heatSettings).addTo(map)
     }
 
+    map.on('click', function(e) {
+      const coordinates = [e.latlng.lat, e.latlng.lng]
+      console.log(coordinates)
+      L.mapbox.featureLayer({
+        type: 'Feature',
+        geometry: {
+            type: 'Point',
+            coordinates: [e.latlng.lng, e.latlng.lat]
+        },
+        properties: {
+            title: 'Area of Interest',
+            description: 'Potential Location',
+            'marker-size': 'large',
+            'marker-color': '#BE9A6B',
+            'marker-symbol': 'cafe'
+        }
+      }).addTo(map);
+      
+    });
+
     d3.csv("./src/data/data_for_web.csv", function(error, data) {
       var category_list = []
       const heatCoordinates = _.map(data, (loc) => [parseFloat(loc.latitude), parseFloat(loc.longitude)]);
