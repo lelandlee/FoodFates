@@ -40,7 +40,8 @@
     "react-select": "0.6.3",
     "redux": "1.0.1",
     "jquery": "~1.11.1",
-    "jquery-ui": "1.10.5"
+    "jquery-ui": "1.10.5",
+    "d3": "3.5.6"
   },
   "dependencies": {
     "flux-react": "^2.6.6",

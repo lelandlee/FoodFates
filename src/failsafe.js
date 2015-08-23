@@ -38,7 +38,7 @@ $("#btn").click(function(){
 
 	object.categories = $('#categories').val()
 
-	get_ratings(4.0)
+	get_ratings("4.2 Stars")
 	show_reviews(reviewResponse)
 
 	console.log(object)
