@@ -44,7 +44,7 @@ $("#btn").click(function(){
 	console.log(object)
 
 	$.ajax({
-	  url: "http://54.148.105.53:5000/get_ratings",
+	  url: "localhost:5000/get_ratings",
 	  type: 'POST',
 	  dataType: 'jsonp',
 	  contentType: 'application/json',
@@ -58,7 +58,7 @@ $("#btn").click(function(){
 	  }
 	});
 	$.ajax({
-	  url: "http://54.148.105.53:5000/get_reviews",
+	  url: "localhost:5000/get_reviews",
 	  type: 'POST',
 	  dataType: 'jsonp',
 	  contentType: 'application/json',
@@ -72,7 +72,7 @@ $("#btn").click(function(){
 	  }
 	});
 	$.ajax({
-	  url: "http://54.148.105.53:5000/get_nearby",
+	  url: "localhost:5000/get_nearby",
 	  type: 'POST',
 	  dataType: 'jsonp',
 	  contentType: 'application/json',
