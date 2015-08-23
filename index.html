@@ -42,19 +42,19 @@
 		 </div>
 
 
-    <div id="map" style="width:75%;float:right;height:80%;border:2px solid wheat"></div>
+    <div id="map" style="width:70%;float:right;height:80%;border:2px solid wheat;margin-right:2%"></div>
 
-    <div style="width:31%">
-    	<h3>Fair safe</h3>
-    	Latitude: <input type= "number" name="latitude" value="33.5"><br>
-    	Longitude: <input type= "number" name="longitude" value="-112.0716401"><br>
-    	mon: <input type= "text" name="mon_open" size="15"value="8AM"><input type= "text" name="mon_close" size="15"value="10PM"><br>
-    	tue: <input type= "text" name="tue_open" size="15"value="8AM"><input type= "text" name="tue_close" size="15"value="10PM"><br>
-    	wen: <input type= "text" name="wen_open" size="15"value="8AM"><input type= "text" name="wen_close" size="15"value="10PM"><br>
-    	thur: <input type= "text" name="thur_open" size="15"value="8AM"><input type= "text" name="thur_close" size="15"value="10PM"><br>
-    	fri: <input type= "text" name="fri_open" size="15"value="8AM"><input type= "text" name="fri_close" size="15"value="10PM"><br>
-    	sat: <input type= "text" name="sat_open" size="15"value="8AM"><input type= "text" name="sat_close" size="15"value="10PM"><br>
-    	sun: <input type= "text" name="sun_open" size="15"value="8AM"><input type= "text" name="sun_close" size="15"value="10PM"><br>
+    <div style="width:31%;margin-left:2%">
+    	<h3>Features:</h3>
+    	<b>Latitude: </b><input type= "number" name="latitude" value="33.5"><br>
+    	<b>Longitude: </b><input type= "number" name="longitude" value="-112.0716401"><br>
+    	<b>mon: </b><input type= "text" name="mon_open" size="15"value="8AM"><input type= "text" name="mon_close" size="15"value="10PM"><br>
+    	<b>tue: </b><input type= "text" name="tue_open" size="15"value="8AM"><input type= "text" name="tue_close" size="15"value="10PM"><br>
+    	<b>wen: </b><input type= "text" name="wen_open" size="15"value="8AM"><input type= "text" name="wen_close" size="15"value="10PM"><br>
+    	<b>thur: </b><input type= "text" name="thur_open" size="15"value="8AM"><input type= "text" name="thur_close" size="15"value="10PM"><br>
+    	<b>fri: </b><input type= "text" name="fri_open" size="15"value="8AM"><input type= "text" name="fri_close" size="15"value="10PM"><br>
+    	<b>sat: </b><input type= "text" name="sat_open" size="15"value="8AM"><input type= "text" name="sat_close" size="15"value="10PM"><br>
+    	<b>sun: </b><input type= "text" name="sun_open" size="15"value="8AM"><input type= "text" name="sun_close" size="15"value="10PM"><br>
 
     	<select multiple id="categories" size="30">
 					<option value="Bars"> Bars</option>
@@ -392,43 +392,43 @@
 			</select>
 
     	<form>
-    		<p>Wifi</p>
+    		<b><p>Wifi:</p></b>
 				<input type="radio" name="wifi" value=0 checked>No
 				<input type="radio" name="wifi" value=1>Free
 				<input type="radio" name="wifi" value=2>Pai
-    		<p>Alcohol</p>
+    		<b><p>Alcohol:</p></b>
 				<input type="radio" name="alcohol" value=0 checked>Full
 				<input type="radio" name="alcohol" value=1>Beer and Wine
 				<input type="radio" name="alcohol" value=2>None
-				<p>Noise Level</p>
+				<b><p>Noise Level:</p></b>
 				<input type="radio" name="noise_level" value=0 checked>Quiet
 				<input type="radio" name="noise_level" value=1>Average
 				<input type="radio" name="noise_level" value=2>Load
 				<input type="radio" name="noise_level" value=3>Very Load
-    		<p>price_range</p>
+    		<b><p>price_range:</p></b>
 				<input type="radio" name="price_range" value=0>sub 10
 				<input type="radio" name="price_range" value=1 checked>10-25
 				<input type="radio" name="price_range" value=2>25-40
 				<input type="radio" name="price_range" value=3>above 40
-    		<p>late_night</p>
+    		<b><p>late_night:</p></b>
 				<input type="radio" name="late_night" value=true checked>Yes
 				<input type="radio" name="late_night" value=false>No
-    		<p>accepts_credit_card</p>
+    		<b><p>accepts_credit_card:</p></b>
 				<input type="radio" name="accepts_credit_card" value=true checked>Yes
 				<input type="radio" name="accepts_credit_card" value=false>No
-    		<p>drive_thru</p>
+    		<b><p>drive_thru:</p></b>
 				<input type="radio" name="drive_thru" value=true checked>Yes
 				<input type="radio" name="drive_thru" value=false>No
-    		<p>waiter_service</p>
+    		<b><p>waiter_service:</p></b>
 				<input type="radio" name="waiter_service" value=true checked>Yes
 				<input type="radio" name="waiter_service" value=false>No
-    		<p>host_large_group</p>
+    		<b><p>host_large_group:</p></b>
 				<input type="radio" name="host_large_group" value=true checked>Yes
 				<input type="radio" name="host_large_group" value=false>No
 			</form>
 			<button id="btn"type="submit" form="form1" value="Submit">Submit</button>
     </div>
-  	<table id="reviewTable" style="width:100%;float:right">
+  	<table id="reviewTable" style="width:100%;float:right;">
 		  <tr>
 		    <td><b>Positive Reviews</b></td>
 		    <td><b>Probabilties</b></td> 

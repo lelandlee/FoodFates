@@ -3,6 +3,7 @@
 //check for a button press, then submit form....
 //Do mouseovers for the heatmap..
 
+var data = []
 const reviewResponse = { "neg": [ { "label": "neutral", "prob": 0.5101209869730974, "sentence": "Loved this place! Amazing food and wine! Service was great! Beautiful experience." } ], "pos": [ { "label": "pos", "prob": 0.5309496870464356, "sentence": "Very trendy busy hot spot and for good reason. Yummy large chesse board with fruit nuts and bread, chicken noodle soup with real chicken and veggies smile emoticon" }, { "label": "pos", "prob": 0.5018211347852204, "sentence": "Monday and Tuesday Bruschetta and Wine deals are where it's at!! Bruschetta is always on point!!" }, { "label": "pos", "prob": 0.8847359251137081, "sentence": "This place is amazing! They have amazing food.. Love the Bruschetta plate. It's very filling and great for 2! Make it an evening, enjoy some wine, very cool place to hang out!" }, { "label": "pos", "prob": 0.8691210697997551, "sentence": "Love this place in our neighborhood! food are very healthy and delicious. We normally order bruchetta with figs and prosciutto." }, { "label": "pos", "prob": 0.8765580402209874, "sentence": "This place has a great atmosphere. Plenty of good food and friendly service. Parking is at a premium so use the valet! Try the Butchers Block!" }, { "label": "pos", "prob": 0.5427032871374824, "sentence": "The butcher's block is always my go to. I sub the hummus for extra ricotta and soft baguette for the hard crispy toasts and it's fantastic every time." }, { "label": "pos", "prob": 0.8663103615658215, "sentence": "It is amazing for happy hour. Decent prices, great atmosphere." }, { "label": "pos", "prob": 0.6549399850557364, "sentence": "Great neighborhood joint can't beat the bruschetta and a cold brew to relax and unwind." }, { "label": "pos", "prob": 0.8812478451985777, "sentence": "Absolutely love this place. Great atmosphere. Nice wine selection too. The servers are very friendly and helpful with recommendations. Plus, their bruschetta is delish!" }, { "label": "pos", "prob": 0.8825371602417713, "sentence": "Good wine and excellent bruschetta. Great waitstaff." }, { "label": "pos", "prob": 0.7504120275752711, "sentence": "What can I add that others haven't already said? This place is adorable, the food is delicious, the wine selection is admirable and the employees are great. Go. Go now." }, { "label": "pos", "prob": 0.5417167973438385, "sentence": "Tomato jam bruschetta. That's all you need to know." }, { "label": "pos", "prob": 0.75602297351551, "sentence": "Love love love this place! If I could go every Sunday drink wine, eat a bruchetta board and listen to music I would. Mixed diverse crowd and great service! win win!" }, { "label": "pos", "prob": 0.9136916277198949, "sentence": "Pretty awesome service! Excellent food and great music!" }, { "label": "pos", "prob": 0.8909201900734743, "sentence": "Great food, great wine, awesome happy hour... what more could you want?!?!" }, { "label": "pos", "prob": 0.6850988058836684, "sentence": "If you have never been before, get the bruschetta. Sample five different versions. It's all good!" }, { "label": "pos", "prob": 0.5053219414820882, "sentence": "Brie and Apple with Fig bruschetta....I dont need to say anything else!!!! (except $5 glasses of wine til 5 all week and $5 mimosas til 5 on the weekends) Best place to spend a Sunday afternoon" }, { "label": "pos", "prob": 0.7197521789569644, "sentence": "Love everything about this place: The food, the atmosphere, the people watching! The happy hour is good too!" }, { "label": "pos", "prob": 0.6542201707799571, "sentence": "Food is great for a small snack. I wouldn't go there if you want a full dinner. Awesome deck to hang out." } ] }
 
 $("#btn").click(function(){
@@ -43,19 +44,47 @@ $("#btn").click(function(){
 	console.log(object)
 
 	$.ajax({
-    url: "http://54.148.105.53:5000/get_ratings",
-    type: 'POST',
-    dataType: 'jsonp',
-    contentType: 'application/json',
-    processData: false,
-    data: object,
-    success: function (data) {
-      console.log(JSON.stringify(data));
-    },
-    error: function(){
-      console.log("Cannot get data");
-    }
-});
+	  url: "http://54.148.105.53:5000/get_ratings",
+	  type: 'POST',
+	  dataType: 'jsonp',
+	  contentType: 'application/json',
+	  processData: false,
+	  data: object,
+	  success: function (data) {
+	    alert(JSON.stringify(data));
+	  },
+	  error: function(){
+	    alert("Cannot get data");
+	  }
+	});
+	$.ajax({
+	  url: "http://54.148.105.53:5000/get_reviews",
+	  type: 'POST',
+	  dataType: 'jsonp',
+	  contentType: 'application/json',
+	  processData: false,
+	  data: object,
+	  success: function (data) {
+	    alert(JSON.stringify(data));
+	  },
+	  error: function(){
+	    alert("Cannot get data");
+	  }
+	});
+	$.ajax({
+	  url: "http://54.148.105.53:5000/get_nearby",
+	  type: 'POST',
+	  dataType: 'jsonp',
+	  contentType: 'application/json',
+	  processData: false,
+	  data: object,
+	  success: function (data) {
+	    alert(JSON.stringify(data));
+	  },
+	  error: function(){
+	    alert("Cannot get data");
+	  }
+	});
 })
 
 
@@ -164,8 +193,12 @@ map.on('click', function(e) {
 });
 
 d3.csv("./src/data/data_for_web.csv", function(error, data) {
+	this.data = data;
   var category_list = []
   const heatCoordinates = _.map(data, function(loc){ return [parseFloat(loc.latitude), parseFloat(loc.longitude)] });
+
+  console.log(data[0])
+
   const geojson = _.map(data, function(loc){
     var categories = loc.categories.split("'")
     _.forEach(categories, function(cat){
